@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" id="login">
+      <input type="text" placeholder="Enter Email" id="useremail" />
+      <input type="password" placeholder="Enter Password" id="pass" />
+      <input type="submit" id="submit" />
+    </form>
+  </body>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      getDocs,
+    } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
+
+    // Initialize Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyAIjoQh5iiT-wnbLhxo6wjKV6QNLJGe2rU",
+      authDomain: "fir-first-form.firebaseapp.com",
+      projectId: "fir-first-form",
+      storageBucket: "fir-first-form.appspot.com",
+      messagingSenderId: "164849429426",
+      appId: "1:164849429426:web:5366b69491d1fe487c92ab",
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const userData = [];
+    // Retrieve data from Firestore
+    const fetchData = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "user"));
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          console.log(data); // Log the data to the console or display it on the page as needed
+          userData.push(data);
+        });
+      } catch (error) {
+        console.error("Error getting documents: ", error);
+      }
+    };
+
+    fetchData();
+
+    let userEmail = document.getElementById("useremail");
+    let userPass = document.getElementById("pass");
+    let submit = document.getElementById("login");
+
+    let cookieData;
+
+    let flag = false;
+
+    submit.addEventListener("submit", (e) => {
+      e.preventDefault();
+      for (let i = 0; i < userData.length; i++) {
+        if (
+          userEmail.value === userData[i].email &&
+          userPass.value === userData[i].password
+        ) {
+          cookieData = userData[i];
+          document.cookie = `userDetail=${JSON.stringify(cookieData)}`;
+          flag = true;
+          break;
+        }
+      }
+
+      if (flag) {
+        window.location.href = "user-details.html";
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="search" name="" id="git-search" />
+    <button id="search">Search</button>
+    <div id="finalResult"></div>
+  </body>
+</html>
+<script>
+  let gitSearch = document.getElementById("git-search");
+  let search = document.getElementById("search");
+  let finalResult = document.getElementById("finalResult");
+
+  search.addEventListener("click", () => {
+    let gitData = gitSearch.value;
+    console.log("data", gitData);
+
+    fetch(`https://api.github.com/users/${gitData}`)
+      .then((result) => result.json())
+      .then((data) => {
+        fetch(data.repos_url)
+          .then((dataResult) => dataResult.json())
+          .then((repo) => {
+            console.log("repo", repo);
+            let finalData = repo.map((repoName) => repoName.name);
+            for (let i of finalData) {
+              let p = document.createElement("p");
+              p.innerText = `${i}`;
+              finalResult.append(p);
+            }
+          });
+      });
+  });
+</script>

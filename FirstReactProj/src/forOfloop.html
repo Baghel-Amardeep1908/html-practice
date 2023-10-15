@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   function sumArray(numbers) {
+  //     let a = 0;
+  //     for (let i of numbers) {
+  //       a = a + i;
+  //     }
+  //     return a;
+  //   }
+
+  //   const numbers = [1, 2, 3, 4, 5];
+  //   const result = sumArray(numbers);
+  //   console.log(result); // The output should be the sum of the numbers in the array.
+
+  //   function findLongestFruit(fruits) {
+  //     let maxlength = 0;
+  //     let max = "";
+  //     for (let i of fruits) {
+  //       if (maxlength < i.length) {
+  //         maxlength = i.length;
+  //         max = i;
+  //       }
+  //     }
+  //     return max;
+  //   }
+
+  //   // Test your function
+  //   const fruits = ["apple", "banana", "cherry", "kiwi"];
+  //   const longestFruit = findLongestFruit(fruits);
+  //   console.log(longestFruit); // Output should be 'banana'
+
+  //   function findTotalPages(books) {
+  //     let a = 0;
+  //     for (let i of books) {
+  //       //console.log(i.pages);
+  //       a = a + i.pages;
+  //     }
+  //     return a;
+  //   }
+
+  //   // Test your function
+  //   const books = [
+  //     { title: "Book 1", pages: 100 },
+  //     { title: "Book 2", pages: 150 },
+  //     { title: "Book 3", pages: 200 },
+  //   ];
+  //   const totalPages = findTotalPages(books);
+  //   console.log(totalPages); // Output should be the sum of pages in all books (450)
+
+  function countVowels(sentence) {
+    let a = [];
+    let b;
+    for (let i of sentence) {
+      if (i === "a" || i === "e" || i === "i" || i === "o" || i === "u") {
+        a.push(i);
+        b = a.length;
+      }
+    }
+    return b;
+  }
+
+  // Test your function
+  const sentence = "Hello, how are you today?";
+  const vowelCount = countVowels(sentence);
+  console.log(vowelCount); // Output should be the count of vowels in the sentence (8)
+</script>

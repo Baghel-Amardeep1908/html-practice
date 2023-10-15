@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   let obj = {
+  //     name: "jagjeet",
+  //     myfun2: function (msg) {
+  //       return console.log(`${msg} ${this.name}`);
+  //     },
+  //   };
+  //   obj.myfun2();
+  //   obj.myfun2.apply("hello");
+
+  name = "jagjeet";
+  function myfun(msg) {
+    console.log(`${msg} ${this}`);
+    // console.log(` ${this}`);
+  }
+  // let x = "hello";
+  // myfun.call(name, "helllllo");
+  // myfun.apply(name, ["hi"]);
+  let x = myfun.bind(name);
+  x("hello");
+</script>

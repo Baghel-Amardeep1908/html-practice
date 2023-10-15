@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="form-element">
+      <p>Email</p>
+      <input
+        type="email"
+        placeholder="Enter email address"
+        onfocus="onFocus(event)"
+        onblur="onBlur(event)"
+      />
+    </div>
+  </body>
+</html>
+
+<script>
+  function onBlur(e) {
+    console.log("Blur started");
+    const { value } = e.target;
+    console.log({ value });
+    if (!value) {
+      e.target.style.border = "1px solid red";
+    } else {
+      e.target.style.border = "1px solid black";
+    }
+  }
+
+  function onFocus(e) {
+    console.log("Focus Started", e);
+  }
+</script>

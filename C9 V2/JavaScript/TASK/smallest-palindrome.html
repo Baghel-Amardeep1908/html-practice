@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let palindrome = (data) => {
+    let splitPalindrome = data.split(" ");
+    let min = Infinity;
+    let maxPalindrome = "";
+    //console.log(splitPalindrome);
+    for (let i = 0; i < splitPalindrome.length; i++) {
+      let str = "";
+      for (let j = splitPalindrome[i].length - 1; j >= 0; j--) {
+        str += splitPalindrome[i][j];
+      }
+      if (str.toLocaleLowerCase() === splitPalindrome[i].toLocaleLowerCase()) {
+        if (str.length < min) {
+          max = str.length;
+          maxPalindrome = splitPalindrome[i];
+        }
+      }
+    }
+    return maxPalindrome;
+  };
+  console.log(palindrome("Hi Madam my name is Bob"));
+</script>

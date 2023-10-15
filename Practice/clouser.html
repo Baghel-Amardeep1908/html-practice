@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function one(input) {
+    let a = 10;
+    let b = 20;
+
+    if (input) {
+      return function () {
+        console.log({ a });
+      };
+    }
+
+    return function () {
+      console.log({ b });
+    };
+  }
+
+  const resultOne = one(true);
+  const resultTwo = one(false);
+
+  resultOne();
+  resultTwo();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  function outer() {
+    var a = 10;
+    letb = 20;
+    const c = 30;
+
+    function inner() {
+      let a1 = 20;
+      function innerV2() {
+        let a11 = 20;
+        function innerV3() {
+          console.log({ a, a1, a11 });
+        }
+        innerV3();
+      }
+      innerV2();
+    }
+
+    inner();
+  }
+
+  outer();
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  /*  for (var i = 0; i < 3; i++) {
+    setTimeout(function () {
+      console(i);
+    }, 1000 + i);
+  } */
+</script>
+
+<script>
+  function visitMall(user) {
+    const cartDetails = {
+      ...user,
+      cart: [],
+    };
+
+    return function (product) {
+      cartDetails.cart.push(product);
+      return cartDetails;
+    };
+  }
+
+  const addToCart = visitMall({ name: "Jagjeet" });
+
+  console.log(addToCart("kitkat"));
+  console.log(addToCart("tropicana juice"));
+  console.log(addToCart("amul cheese"));
+  console.log(addToCart("oreo biscuit"));
+</script>
+
+<script>
+  const cart = [];
+
+  const addToCartV2 = (product) => {
+    cart.push(product);
+  };
+
+  addToCartV2("apple");
+  addToCartV2("mango");
+  addToCartV2("pineapple");
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  function outer() {
+    let counter = 10;
+
+    return function incrementCounter(num) {
+      counter += num;
+      return counter;
+    };
+  }
+
+  let myFunc = outer();
+  console.log(myFunc(1)); // 11
+  console.log(myFunc(2)); // 13
+  console.log(myFunc(3)); // 16
+  console.log(myFunc(4)); // 20
+</script> -->

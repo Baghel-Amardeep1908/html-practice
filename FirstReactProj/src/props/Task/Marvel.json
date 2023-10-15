@@ -1,0 +1,64 @@
+[
+    {
+      "id": 1,
+      "name": "Iron Man",
+      "actor": "Robert Downey, Jr.",
+      "realname": "Tony Stark",
+      "species": "Human",
+      "citizenship": "American",
+      "dateofbirth": "May 29, 1970",
+      "image": "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/e/e9/Iron_Man_AIW_Profile.jpg/revision/latest?cb=20180518212029"
+    },
+    {
+      "id": 2,
+      "name": "Captain America",
+      "actor": "Chris Evans",
+      "realname": "Steve Rogers",
+      "species": "Human",
+      "citizenship": "American",
+      "dateofbirth": "July 4, 1918",
+      "image": "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/6/66/Captain_America_AIW_Profile.jpg/revision/latest?cb=20180518211704"
+    },
+    {
+      "id": 3,
+      "name": "Hulk",
+      "actor": "Mark Ruffalo, Edward Norton",
+      "realname": "Bruce Banner",
+      "species": "Human",
+      "citizenship": "American, Sakaaran (formerly)",
+      "dateofbirth": "December 18, 1969",
+  
+      "image": "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/c/c3/Hulk_AIW_Profile.jpg/revision/latest?cb=20180518211829"
+    },
+    {
+      "id": 4,
+      "name": "Thor",
+      "actor": "Chris Hemsworth",
+      "realname": "Thor Odinson",
+      "species": "Asgardian",
+      "citizenship": "Asgardian",
+      "dateofbirth": "964 A.D. - 965 A.D.",
+      "image": "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/4/45/Thor_AIW_Profile.jpg/revision/latest?cb=20180518212120"
+    },
+    {
+      "id": 5,
+      "name": "Black Widow",
+      "actor": "Scarlett Johansson",
+      "realname": "Natasha Romanoff",
+      "species": "Human",
+      "citizenship": "Soviet, Russian, American",
+      "dateofbirth": "November 22, 1984",
+      "image": "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/5/50/Black_Widow_AIW_Profile.jpg/revision/latest?cb=20180518212205"
+    },
+    {
+      "id": 6,
+      "name": "Hawkeye",
+      "actor": "Jeremy Renner",
+      "realname": "Clint Barton",
+      "species": "Human",
+      "citizenship": "American",
+      "dateofbirth": "January 7, 1971",
+      "image": "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/6/6f/CW_Textless_Shield_Poster_02.jpg/revision/latest?cb=20180417151836"
+    }
+  ]
+  

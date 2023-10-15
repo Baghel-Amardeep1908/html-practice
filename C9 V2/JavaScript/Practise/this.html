@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   var namee = "siddhant";
+
+  //   let Myobject = {
+  //     namee: "suraj",
+  //     normalFunction: function () {
+  //       console.log(this.namee);
+  //     },
+  //     arrowFunction: () => {
+  //       console.log(this.namee);
+  //     },
+  //   };
+
+  //   Myobject.normalFunction();
+  //   Myobject.arrowFunction();
+
+  var name = "amardeep";
+
+  let obj = {
+    name: "amar",
+    myfun: function () {
+      console.log("myfun", this.name);
+
+      function myfun3() {
+        console.log("myfun3", this.name);
+      }
+      myfun3();
+
+      let arrow = () => {
+        console.log("arrow", this.name);
+
+        function myfun2() {
+          console.log("myfun2", this.name);
+        }
+        myfun2();
+      };
+      arrow();
+    },
+    arrfun: () => {
+      console.log("arrfun", this.name);
+
+      function myfun4() {
+        console.log("myfun4", this.name);
+      }
+      myfun4();
+    },
+  };
+  obj.myfun();
+  obj.arrfun();
+
+  console.log(this.name);
+</script>

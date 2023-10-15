@@ -1,0 +1,15 @@
+#userData {
+    display: none;
+    flex-direction: column;
+  }
+  
+  #logOut {
+    display: none;
+  }
+  
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  

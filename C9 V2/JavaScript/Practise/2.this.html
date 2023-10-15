@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let obj = {
+    name: "Amardeep",
+    address: "Indore",
+    info: function () {
+      console.log("info", this); //Object
+      let insideInfo2 = () => {
+        console.log("insideInfo2", this); //Object
+        function nestedInfo2() {
+          console.log("nestedInfo2", this); // Window
+        }
+        nestedInfo2();
+      };
+      insideInfo2();
+      function insideInfo() {
+        console.log("insideInfo", this); //Window
+      }
+      insideInfo();
+    },
+    arrowInfo: () => {
+      console.log("arrowInfo", this); //Window
+    },
+  };
+  obj.info();
+  obj.arrowInfo();
+</script>

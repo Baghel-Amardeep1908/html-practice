@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  var a = 200;
+  let b = 300;
+  const c = 400;
+
+  function tryMe() {
+    var a1 = 200;
+    let a2 = 300;
+    const a3 = 400;
+
+    console.log(a1, this.a1, a2, a3);
+
+      function myFunc() {
+      console.log("myFunc", this);
+
+      console.log(this);
+
+      function myInnerFunc() {
+        console.log("myInnerFunc", this);
+      }
+
+      const myInnerFuncArrow = () => {
+        console.log("myInnerFuncArrow", this);
+      };
+      myInnerFunc();
+      myInnerFuncArrow();
+    }
+
+    myFunc.call({ name: "sahil" });
+  }
+  tryMe();function myFunc() {
+      console.log("myFunc", this);
+
+      console.log(this);
+
+      function myInnerFunc() {
+        console.log("myInnerFunc", this);
+      }
+
+      const myInnerFuncArrow = () => {
+        console.log("myInnerFuncArrow", this);
+      };
+      myInnerFunc();
+      myInnerFuncArrow();
+    }
+
+    myFunc.call({ name: "sahil" });
+  
+  tryMe();
+</script>
+
+- In an object method, this refers to the object.
+- Alone, this refers to the global object.
+- In a function, this refers to the global object.
+- In a function, in strict mode, this is undefined.
+- In an event, this refers to the element that received the event.
+- Methods like call(), apply(), and bind() can refer this to any object.
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+ // This use in Global
+  console.log("this:", this);
+  const myThis = this;
+
+  console.log("myThis: ", myThis);
+
+  console.log("windows:", window);
+
+  console.log(this === window);
+  console.log(this === myThis);
+</script> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+     This use in HTML
+    <p onclick="this.style.color='red'">Hello</p>
+    <p onclick="this.style.color='blue'">Hello</p>
+    <p onclick="this.style.color='green'">Hello</p>
+    <h1 onclick="this.style.color='olive'">Hello</h1>
+    <h1 id="heading">Hello</h1>
+  </body>
+</html>
+<script>
+  const heading = document.getElementById("heading");
+  heading.addEventListener("click", function () {
+    console.log("This: ", this);
+    this.style.color = "blue";
+    this.style.backgroundColor = "olive";
+    this.innerText = "Aadarsh";
+  });
+</script> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function tryMe() {
+    console.log("1. Inside tryMe:", this);
+    const photo = this;
+
+    const innerFunc = () => {
+      console.log("2. Inside innerFunc:", this);
+
+      /* const iiF2 = () => {
+        console.log("Inside iiF2: ", this);
+      };
+
+      iiF2(); */
+    };
+
+    function tryMeV2() {
+      console.log("3. Inside tryMeV2:", photo);
+
+      const tryMeV21 = () => {
+        console.log("3.1. Inside tryMeV2:", photo);
+      };
+
+      tryMeV21();
+    }
+
+    innerFunc();
+    tryMeV2();
+  }
+
+  tryMe.call({ name: "Ankit", city: "Morena" });
+</script> -->

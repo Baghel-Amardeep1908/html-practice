@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main-container"></div>
+  </body>
+</html>
+<script>
+  const netflixelem = document.getElementById("main-container");
+  netflixelem.style.fontFamily =
+    "Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif";
+  netflixelem.style.fontSize = "16px";
+
+  const container = document.createElement("h2");
+  container.innerText = "Sign In";
+
+  const email = document.createElement("input");
+  email.innerText = "Email or phone number";
+  email.placeholder = "Email or phone number";
+  email.style.height = "25px";
+  email.style.width = "230px";
+
+  const password = document.createElement("input");
+  password.innerHTML = "Password";
+  password.placeholder = "Password";
+  password.style.height = "25px";
+  password.style.width = "230px";
+  // password.style.display = "flex";
+  password.style.gap = "10px";
+  password.style.marginTop = "10px";
+  password.style.marginBottom = "20px";
+
+  const sign = document.createElement("button");
+  sign.innerText = "Sign In";
+  sign.style.height = "30px";
+  sign.style.width = "240px";
+  sign.style.display = "flex";
+  sign.style.justifyContent = "center";
+  sign.style.alignItems = "center";
+  sign.style.background = "red";
+  sign.style.color = "#fff";
+  sign.style.border = "none";
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+
+  const remember = document.createElement("span");
+  remember.innerText = "Remember me";
+
+  const need = document.createElement("span");
+  need.innerText = "Need help?";
+  need.style.paddingLeft = "40px";
+  need.style.paddingBottom = "5cm";
+
+  const newnet = document.createElement("div");
+  newnet.innerText = "New to Netflix?";
+  // newnet.style.display = "flex";
+
+  const signelem = document.createElement("span");
+  signelem.innerText = "Sign up now.";
+
+  netflixelem.append(container);
+  netflixelem.append(email);
+  netflixelem.append(password);
+  netflixelem.append(sign);
+  netflixelem.append(checkbox);
+  netflixelem.append(remember);
+  netflixelem.append(need);
+  netflixelem.append(newnet);
+  netflixelem.append(signelem);
+</script>

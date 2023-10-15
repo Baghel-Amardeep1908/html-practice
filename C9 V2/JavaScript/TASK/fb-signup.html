@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #error,
+    #error2,
+    #error3,
+    #error4,
+    #error5,
+    #error6,
+    #error7,
+    #error8,
+    #error9 {
+      display: none;
+    }
+  </style>
+  <body>
+    <div>
+      <form action="" id="container">
+        <div>
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" placeholder="Enter First Name" />
+        </div>
+        <div id="error"></div>
+        <div>
+          <label for="mname">Middle Name</label>
+          <input type="text" id="mname" placeholder="Enter Middle Name" />
+        </div>
+        <div id="error2"></div>
+        <div>
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="Enter Last Name" />
+        </div>
+        <div id="error3"></div>
+        <div>
+          <label for="email">Email ID</label>
+          <input type="email" id="email" placeholder="Email Address" />
+        </div>
+        <div id="error4"></div>
+        <div>
+          <label for="paswd">Create Password</label>
+          <input type="password" id="paswd" placeholder="Create Password" />
+        </div>
+        <div id="error5"></div>
+        <div>
+          <label for="cpaswd">Confirm Password</label>
+          <input type="password" id="cpaswd" placeholder="Confirm Password" />
+        </div>
+        <div id="error6"></div>
+        <div>
+          <label for="dob">Date Of Birth</label>
+          <input type="date" id="dob" />
+        </div>
+        <div id="error7"></div>
+        <div>
+          <label for="linkdin">LinkdIn URL</label>
+          <input type="url" id="linkdin" placeholder="Enter LinkdIn URL" />
+        </div>
+        <div id="error8"></div>
+        <div>
+          <label for="github">GitHub URL</label>
+          <input type="url" id="github" placeholder="Enter LinkdIn URL" />
+        </div>
+        <div id="error9"></div>
+        <div>
+          <label for="submit"></label>
+          <input type="submit" id="submit" value="submit" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+  } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAIjoQh5iiT-wnbLhxo6wjKV6QNLJGe2rU",
+    authDomain: "fir-first-form.firebaseapp.com",
+    projectId: "fir-first-form",
+    storageBucket: "fir-first-form.appspot.com",
+    messagingSenderId: "164849429426",
+    appId: "1:164849429426:web:5366b69491d1fe487c92ab",
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  console.log(app);
+
+  const db = getFirestore(app);
+  console.log(db);
+
+  const usersCollection = collection(db, "user");
+
+  //First Name
+
+  let fName = document.getElementById("fname");
+  fName.addEventListener("blur", (e) => {
+    const { value, style } = e.target;
+    if (!value || !/^[a-zA-Z]+$/.test(value)) {
+      error = document.getElementById("error");
+      error.innerText = "Enter the Name";
+      error.style.display = "block";
+      error.style.color = "red";
+      console.log("Name Error", error);
+    } else {
+      error.style.display = "none";
+    }
+  });
+
+  //Middle Name
+
+  let mName = document.getElementById("mname");
+  mName.addEventListener("blur", (e) => {
+    const { value, style } = e.target;
+    if (!value || !/^[a-zA-Z]+$/.test(value)) {
+      error2 = document.getElementById("error2");
+      error2.innerText = "Enter the Name";
+      error2.style.display = "block";
+      error2.style.color = "red";
+    } else {
+      error2.style.display = "none";
+    }
+  });
+
+  //Last Name
+
+  let lName = document.getElementById("lname");
+  lName.addEventListener("blur", (e) => {
+    const { value, style } = e.target;
+    if (!value || !/^[a-zA-Z]+$/.test(value)) {
+      error3 = document.getElementById("error3");
+      error3.innerText = "Enter the Name";
+      error3.style.display = "block";
+      error3.style.color = "red";
+    } else {
+      error3.style.display = "none";
+    }
+  });
+
+  //Email ID
+
+  let email = document.getElementById("email");
+  email.addEventListener("blur", (e) => {
+    const { value, style } = e.target;
+
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+    if (!emailRegex.test(value)) {
+      error4 = document.getElementById("error4");
+      error4.innerText = "Enter the valid Email";
+      error4.style.display = "block";
+      error4.style.color = "red";
+    } else {
+      error4.style.display = "none";
+    }
+  });
+
+  //Password
+
+  let password = document.getElementById("paswd");
+  password.addEventListener("blur", (e) => {
+    const { value, style } = e.target;
+    if (
+      !value ||
+      !/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/.test(value)
+    ) {
+      error5 = document.getElementById("error5");
+      error5.innerText = "The password have min 8 char and max 12";
+      error5.style.display = "block";
+      error5.style.color = "red";
+    } else {
+      error5.style.display = "none";
+    }
+  });
+
+  //Confirm Password
+
+  let conPassword = document.getElementById("cpaswd");
+  conPassword.addEventListener("blur", (e) => {
+    const { value, style } = e.target;
+    if (value !== password.value) {
+      error6 = document.getElementById("error6");
+      error6.innerText = "The Confirm Password is not matched with Password";
+      error6.style.display = "block";
+      error6.style.color = "red";
+    } else {
+      error5.style.display = "none";
+    }
+  });
+
+  //Date of Birth
+
+  let dOb = document.getElementById("dob");
+  dOb.addEventListener("input", (e) => {
+    const { value, style } = e.target;
+    let uDate = new Date(value);
+    let currentDate = new Date();
+    if (uDate > new Date()) {
+      error7 = document.getElementById("error7");
+      error7.innerText = "The Date should not be extend by current date";
+      error7.style.display = "block";
+      error7.style.color = "red";
+    } else {
+      error7.style.display = "none";
+    }
+  });
+
+  //LinkdIn Profile
+
+  let linkdin = document.getElementById("linkdin");
+  linkdin.addEventListener("blur", (e) => {
+    const { value, style } = e.target;
+    console.log("Value", value);
+    if (value.indexOf("https://www.linkedin.com/in/") !== 0) {
+      let error8 = document.getElementById("error8");
+      error8.innerText = "Enter Valid LinkdIn URL";
+      error8.style.display = "block";
+      error8.style.color = "red";
+    } else {
+      error8.style.display = "none";
+    }
+  });
+
+  //GitHub Profile
+
+  let github = document.getElementById("github");
+  github.addEventListener("blur", (e) => {
+    const { value, style } = e.target;
+    console.log("Value", value);
+    if (value.indexOf("https://github.com/") !== 0) {
+      let error9 = document.getElementById("error9");
+      error9.innerText = "Enter Valid LinkdIn URL";
+      error9.style.display = "block";
+      error9.style.color = "red";
+    } else {
+      error9.style.display = "none";
+    }
+  });
+
+  //Submit
+
+  let uSubmit = document.getElementById("container");
+  uSubmit.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    console.log("Submit", uSubmit);
+
+    const userData = {
+      firstName: fName.value,
+      middleName: mName.value,
+      lastName: lName.value,
+      email: email.value,
+      password: password.value,
+      confirmPassword: conPassword.value,
+      date: dOb.value,
+      linkdin: linkdin.value,
+      github: github.value,
+      // Add other fields here
+    };
+
+    if (fName.value.length === 0) {
+      error = document.getElementById("error");
+      error.innerText = "Enter the Name";
+      error.style.display = "block";
+      error.style.color = "red";
+    }
+    if (mName.value.length === 0) {
+      error2 = document.getElementById("error2");
+      error2.innerText = "Enter the Name";
+      error2.style.display = "block";
+      error2.style.color = "red";
+    }
+    if (lName.value.length === 0) {
+      error3 = document.getElementById("error3");
+      error3.innerText = "Enter the Name";
+      error3.style.display = "block";
+      error3.style.color = "red";
+    }
+    if (email.value.length === 0) {
+      error4 = document.getElementById("error4");
+      error4.innerText = "Enter the valid Email";
+      error4.style.display = "block";
+      error4.style.color = "red";
+    }
+    if (password.value.length === 0) {
+      error5 = document.getElementById("error5");
+      error5.innerText = "The password have min 8 char and max 12";
+      error5.style.display = "block";
+      error5.style.color = "red";
+    }
+    if (conPassword.value.length === 0) {
+      error6 = document.getElementById("error6");
+      error6.innerText = "The Confirm Password is not matched with Password";
+      error6.style.display = "block";
+      error6.style.color = "red";
+    }
+    if (dOb.value.length === 0) {
+      error7 = document.getElementById("error7");
+      error7.innerText = "The Date should not be extend by current date";
+      error7.style.display = "block";
+      error7.style.color = "red";
+    }
+    if (linkdin.value.length === 0) {
+      error8 = document.getElementById("error8");
+      error8.innerText = "Enter Valid LinkdIn URL";
+      error8.style.display = "block";
+      error8.style.color = "red";
+    }
+    if (github.value.length === 0) {
+      error9 = document.getElementById("error9");
+      error9.innerText = "Enter Valid GitHub URL";
+      error9.style.display = "block";
+      error9.style.color = "red";
+    }
+    fName.value = "";
+    mName.value = "";
+    lName.value = "";
+    email.value = "";
+    password.value = "";
+    conPassword.value = "";
+    dOb.value = "";
+    linkdin.value = "";
+    github.value = "";
+    try {
+      const docRef = await addDoc(usersCollection, userData);
+      console.log("User data added with ID: ", docRef.id);
+      window.location.href = "login.html";
+      // Optionally, you can redirect the user to a success page or perform other actions
+    } catch (error) {
+      console.error("Error adding user data: ", error);
+    }
+  });
+</script>

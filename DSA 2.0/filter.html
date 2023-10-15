@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   const ages = [15, 20, 25, 17, 30, 22, 12, 18];
+
+  //   // Use filter() to create an array of ages that are 18 or older
+  //   const adults = ages.filter((item) => item > 18);
+
+  //   console.log(adults); // Expected output: [20, 25, 30, 22, 18]
+
+  //////////////////////////////////////////////////////////////////////
+
+  //   const numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 22, 19, 23, 88];
+  //   let output = [];
+
+  //   // Normal Method
+  //   //
+  //   //   for (let j of numbers) {
+  //   //     let prime = true;
+  //   //     for (let i = 2; i < j; i++) {
+  //   //       if (j % i == 0) {
+  //   //         prime = false;
+  //   //         break;
+  //   //       }
+  //   //     }
+  //   //     if (prime) {
+  //   //       output.push(j);
+  //   //     }
+  //   //   }
+  //   //
+
+  //   const primes = numbers.filter((j) => {
+  //     let prime = true;
+  //     for (i = 2; i < j; i++) {
+  //       if (j % i == 0) {
+  //         prime = false;
+  //         break;
+  //       }
+  //     }
+  //     return prime;
+  //   });
+
+  //   console.log(primes); // Expected output: [2, 3, 5, 7, 11]
+
+  //////////////////////////////////////////////////////////////////////////////////
+  //   const names = ["Alice", "Bob", "Anna", "David", "Amy"];
+
+  //   // Use filter() to create an array of names that start with "A"
+  //   const aNames = names.filter((item) => {
+  //     return item[0] == "A";
+  //   });
+
+  //   console.log(aNames); // Expected output: ["Alice", "Anna", "Amy"]
+
+  /////////////////////////////////////////////////////////////////////////
+
+  const products = [
+    { id: 1, name: "Laptop", inStock: true },
+    { id: 2, name: "Phone", inStock: false },
+    { id: 3, name: "Tablet", inStock: true },
+    { id: 4, name: "Monitor", inStock: false },
+  ];
+
+  // Use filter() to create an array of products that are in stock
+  const inStockProducts = products.filter((item) => item.inStock);
+
+  console.log(inStockProducts);
+  // Expected output: [{ id: 1, name: "Laptop", inStock: true }, { id: 3, name: "Tablet", inStock: true }]
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const promise = () => {
+    return new Promise((reply, reject) => {
+      //reply(1);
+      reject("I am error");
+    });
+  };
+
+  promise()
+    .then((data) => {
+      return data + 10;
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+    .then((data) => {
+      console.log("LN10: ", data);
+      return data + 20;
+    })
+    .then((data) => {
+      console.log("LN15: ", data);
+    });
+</script>

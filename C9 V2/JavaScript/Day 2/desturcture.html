@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  obj = { name: "Shubham", age: 28, location: "Indore", country: "India" };
+
+  //ES5 way
+
+  var uName = obj.name;
+  var uAge = obj.age;
+  var uLocation = obj.location;
+
+  console.log(`ES5 way ${uName} ${uAge} ${uLocation}`);
+
+  //ES6 way
+
+  obj2 = { name: "Shubham", age: 29, location: "delhi", country: "India" };
+
+  const { name, age, location, country } = obj2;
+
+  console.log(`ES6 way ${name} ${age} ${location}`);
+</script>

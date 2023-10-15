@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  fetch("https://fakestoreapi.com/products")
+    .then((data) => data.json())
+    .then((data) => {
+      let obj = {};
+      for (let i of data) {
+        const { category, ...j } = i;
+        // console.log("scsa", category, j);
+        if (!obj.hasOwnProperty(category)) {
+          obj[category] = [j];
+        } else {
+          obj[category].push(j);
+        }
+      }
+
+      console.log(obj);
+    });
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   function squareNumbers(numbers) {
+    const res = []
+  //     numbers.forEach(function (elem, index, array) {
+    res.push(elem ** 2)
+  //       array[index] = elem ** 2;
+  //       return;
+  //     });
+  //   }
+
+  //   // Test your function
+  //   const numbers = [1, 2, 3, 4, 5];
+  //   squareNumbers(numbers);
+  //   console.log(numbers); // The output should be [1, 4, 9, 16, 25]
+
+  //   function printGreetings(namesArray) {
+  //     namesArray.forEach(function (elem, index, array) {
+  //       array[index] = `Hello, ${elem}!`;
+  //     });
+  //   }
+  //   const names = ["Alice", "Bob", "Charlie"];
+  //   printGreetings(names);
+  //   console.log(names);
+
+  //   // Expected Output:
+  //   // Hello, Alice!
+  //   // Hello, Bob!
+  //   // Hello, Charlie!
+
+  function findHighestScorer(students) {
+    let max = 0;
+    let sName = "";
+
+    students.forEach((elem, index, array) => {
+      if (elem.score > max) {
+        max = elem.score;
+        sName = elem.name;
+      }
+    });
+    console.log(`The highest scorer is ${sName} with a score of ${max}.`);
+  }
+
+  // Test your function
+  const students = [
+    { name: "Alice", score: 85 },
+    { name: "Bob", score: 92 },
+    { name: "Charlie", score: 78 },
+  ];
+  findHighestScorer(students);
+  // Expected Output:
+  // The highest scorer is Bob with a score of 92.
+</script>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const profile = {
+    userName: "Abhinav",
+    getName: function () {
+      console.log("1. This NF: ", this); // Profile
+
+      const myAF = () => {
+        console.log("2. This AF: ", this); // Profile
+
+        function four() {
+          console.log("3. This four: ", this); // Window
+        }
+
+        const five = () => {
+          console.log("4. This four: ", this); // Profile
+        };
+
+        four();
+        five();
+      };
+
+      function tryMe() {
+        console.log("5. This tryMe: ", this); // Window
+
+        const six = () => {
+          console.log("6. This tryMe: ", this); // Window
+        };
+
+        six();
+      }
+
+      tryMe();
+      myAF();
+      return true;
+    },
+  };
+
+  profile.getName();
+  var _getName = profile.getName;
+  //_getName();
+</script>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const profile = {
+    userName: "Abhinav",
+    getName: function () {
+      console.log("1. This NF: ", this);
+
+      const myAF = () => {
+        console.log("2. This AF: ", this);
+      };
+
+      function tryMe() {
+        console.log("3. This tryMe: ", this);
+      }
+
+      tryMe();
+      myAF();
+      return true;
+    },
+  };
+
+  profile.getName();
+  var _getName = profile.getName;
+  //_getName();
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function tryMe() {
+    const arrFun = () => {
+      console.log("This AF: ", this);
+    };
+
+    function tryMeV2() {
+      console.log("This tryMeV2: ", this);
+    }
+
+    console.log("This NF: ", this);
+
+    arrFun();
+    tryMeV2();
+  }
+
+  tryMe.call("shubham");
+</script> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const profile = {
+    userName: "Abhinav",
+    getName: function () {
+      console.log("This: ", this);
+      return `My name is ${this.userName}`;
+    },
+    getNameV2: () => {
+      console.log("This: ", this);
+      return `My name is ${this.userName}`;
+    },
+  };
+
+  console.log("Before", profile.getName());
+  const _getName = profile.getName;
+  console.log("After", _getName());
+</script>
+
+<script>
+  console.log("BeforeV2", profile.getNameV2());
+  const _getNameV2 = profile.getNameV2;
+  console.log("AfterV2", _getNameV2());
+</script>
+ -->
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const profile = {
+    userName: "Abhinav",
+    getName: function () {
+      return `My name is ${this.userName}`;
+    },
+  };
+
+  console.log("Before", profile.getName());
+
+  const _getName = profile.getName;
+
+  console.log("After", _getName());
+</script> -->

@@ -1,0 +1,18 @@
+#details{
+    display: none;
+    flex-direction: column;
+}
+#logout{
+    display: none;
+}
+img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+#git-search{
+    display: none;
+}
+#search{
+    display: none;
+}

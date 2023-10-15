@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  function MyCar(name, color) {
+    let carName = name;
+    let carColor = color;
+
+    this.getName = function () {
+      return carName;
+    };
+    this.getColor = function () {
+      return carColor;
+    };
+
+    this.setName = function (newName) {
+      carName = newName;
+      return this.carName;
+    };
+
+    this.setColor = function (newName) {
+      carColor = newName;
+      return this.carColor;
+    };
+  }
+
+  MyCar.prototype.show = true;
+
+  const car = new MyCar("Kia Celtos", "Black");
+  console.log(car.getName());
+  console.log(car.getColor());
+
+  car.setName("Merc Benz C Class");
+
+  console.log(car.getName());
+</script>
+
+<script>
+  class MyAnotherCar {
+    constructor(name, color) {
+      this.name = name;
+      this.color = color;
+    }
+
+    getName() {
+      return carName;
+    }
+
+    getColor() {
+      return carColor;
+    }
+
+    setName(newName) {
+      carName = newName;
+      return this.carName;
+    }
+
+    setColor(newName) {
+      carColor = newName;
+      return this.carColor;
+    }
+  }
+
+  const aCar = new MyAnotherCar("A", "B");
+</script>

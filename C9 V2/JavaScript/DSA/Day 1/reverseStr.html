@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //Reverse Words in String. 75% medium. +6
+
+  //Way 1
+  //   let str = "Amardeep";
+  //   for (i = str.length - 1; i >= 0; i--) {
+  //     console.log(str[i]);
+  //   }
+
+  //Way 2
+  //   function reversed(str) {
+  //     let strJoin = "";
+  //     for (let i = str.length - 1; i >= 0; i--) {
+  //       strJoin += str[i];
+  //     }
+  //     return strJoin;
+  //   }
+  //   console.log(reversed("Amardeep"));
+
+  //Way 3
+  function reversed(str) {
+    // let splitStr = str.split("");
+    // let reverseStr = splitStr.reverse();
+    // let joinStr = reverseStr.join("");
+    let joinStr = str.split("").reverse().join("");
+    return joinStr;
+  }
+  console.log(reversed("Amardeep"));
+</script>

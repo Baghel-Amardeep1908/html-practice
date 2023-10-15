@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let obj = {};
+  let myfun = (a, b) => {
+    obj["a"] = b;
+  };
+  myfun("x", 20);
+  myfun("y", 30);
+  myfun("z", 40);
+  myfun("w", 50);
+  console.log(obj);
+</script>

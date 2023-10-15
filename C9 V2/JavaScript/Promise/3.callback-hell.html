@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const openSwiggy = () => {
+    return new Promise((success, failed) => {
+      setTimeout(() => {
+        success("My Swiggy App Open");
+      });
+    });
+  };
+
+  const searchFood = () => {
+    return new Promise((success, failed) => {
+      setTimeout(() => {
+        success("I am searching the Food");
+      });
+    });
+  };
+
+  const orderFood = () => {
+    return new Promise((success, failed) => {
+      setTimeout(() => {
+        success("I order the food");
+      });
+    });
+  };
+
+  const enjoyFood = () => {
+    return new Promise((success, failed) => {
+      setTimeout(() => {
+        success("Food is Fantastic");
+      });
+    });
+  };
+
+  // .then and .catch
+  // openSwiggy()
+  // .then((open)=>{
+  //     console.log("1.", open )
+  //     searchFood()
+  //     .then((search)=>{
+  //         console.log("2.", search)
+  //         orderFood()
+  //         .then((order)=>{
+  //             console.log("3.",order)
+  //         })
+  //         .catch((err)=>{
+  //             console.log("Order Error", err)
+  //         })
+  //     })
+  //     .catch((err)=>{
+  //         console.log("Search Error", err)
+  //     })
+  // })
+  // .catch((err)=>{
+  //     console.log("Open Err", err)
+  // })
+
+  const swiggy = async () => {
+    try {
+      const open = await openSwiggy();
+      console.log("1.", open);
+      const search = await searchFood();
+      console.log("2.", search);
+      const order = await orderFood();
+      console.log("3.", order);
+      const deliver = await enjoyFood();
+      console.log("4.", deliver);
+    } catch (err) {
+      console.log("Swiggy Error", err);
+    }
+  };
+  swiggy();
+</script>

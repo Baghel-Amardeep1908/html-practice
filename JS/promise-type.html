@@ -1,0 +1,286 @@
+<!-- Promise type "race"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  const a = () => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply("a");
+      }, 5000);
+    });
+  };
+  const b = () => {
+    return new Promise((reply, reject) => {
+      reply("b");
+    });
+  };
+  const c = () => {
+    return new Promise((reply, reject) => {
+      reply("c");
+    });
+  };
+  const d = () => {
+    return new Promise((reply, reject) => {
+      reply("d");
+    });
+  };
+
+  const runPromiseWithAnyRace = async () => {
+    try {
+      const results = await Promise.race([a(), b(), c(), d()]);
+      console.log(results);
+    } catch (err) {
+      console.log("Error", err);
+    }
+  };
+
+  runPromiseWithAnyRace();
+</script> -->
+
+
+
+
+
+
+
+<!-- Promise type "any"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  const a = () => {
+    return new Promise((reply, reject) => {
+      reject("a");
+    });
+  };
+  const b = () => {
+    return new Promise((reply, reject) => {
+      reject("b");
+    });
+  };
+  const c = () => {
+    return new Promise((reply, reject) => {
+      reply("c");
+    });
+  };
+  const d = () => {
+    return new Promise((reply, reject) => {
+      reject("d");
+    });
+  };
+
+  const runPromiseWithAnySucess = async () => {
+    try {
+      const results = await Promise.any([a(), b(), c(), d()]);
+      console.log(results);
+    } catch (err) {
+      console.log("Error", err);
+    }
+  };
+
+  runPromiseWithAnySucess();
+</script> -->
+
+
+
+
+
+<!-- Promise type "allSettled"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  const a = () => {
+    return new Promise((reply, reject) => {
+      reply("a");
+    });
+  };
+  const b = () => {
+    return new Promise((reply, reject) => {
+      reject("b");
+    });
+  };
+  const c = () => {
+    return new Promise((reply, reject) => {
+      reply("c");
+    });
+  };
+  const d = () => {
+    return new Promise((reply, reject) => {
+      reject("d");
+    });
+  };
+
+  const runPromiseWithAllSuccess = async () => {
+    try {
+      const results = await Promise.allSettled([a(), b(), c(), d()]);
+      console.log(results);
+    } catch (err) {
+      console.log("Error", err);
+    }
+  };
+
+  runPromiseWithAllSuccess();
+</script> -->
+
+
+<!-- Promise type "all"
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  const a = () => {
+    return new Promise((reply, reject) => {
+      reply("a");
+    });
+  };
+  const b = () => {
+    return new Promise((reply, reject) => {
+      reply("b");
+    });
+  };
+  const c = () => {
+    return new Promise((reply, reject) => {
+      reply("c");
+    });
+  };
+  const d = () => {
+    return new Promise((reply, reject) => {
+      reply("d");
+    });
+  };
+
+  const runPromisesSequentially = async () => {
+    const aResult = await a();
+    const bResult = await b();
+    const cResult = await c();
+    const dResult = await d();
+
+    return { aResult, bResult, cResult, dResult };
+  };
+
+  const runPromisesSequentiallyWithOutTryCatch = async () => {
+    const aResult = await a().catch((err) => false);
+    if (!aResult) {
+      throw new Error("Promise 1 failed");
+    }
+
+    const bResult = await b().catch((err) => false);
+    if (!bResult) {
+      throw new Error("Promise 2 failed");
+    }
+
+    const cResult = await c().catch((err) => false);
+    if (!cResult) {
+      throw new Error("Promise 3 failed");
+    }
+
+    const dResult = await d().catch((err) => false);
+    if (!dResult) {
+      throw new Error("Promise 4 failed");
+    }
+
+    return [{ aResult, bResult, cResult, dResult }];
+  };
+
+  const runPromiseWithAllSuccess = async () => {
+    try {
+      const results = await Promise.all([a(), b(), c(), d()]);
+      console.log(results);
+    } catch (err) {
+      console.log("Error");
+    }
+  };
+
+  runPromiseWithAllSuccess().then((data) => {
+    console.log(data);
+  });
+</script> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  const a = () => {
+    return new Promise((reply, reject) => {
+      reply("a");
+    });
+  };
+  const b = () => {
+    return new Promise((reply, reject) => {
+      reply("b");
+    });
+  };
+  const c = () => {
+    return new Promise((reply, reject) => {
+      reply("c");
+    });
+  };
+  const d = () => {
+    return new Promise((reply, reject) => {
+      reply("d");
+    });
+  };
+
+  const runPromisesSequentially = async () => {
+    const aResult = await a();
+    const bResult = await b();
+    const cResult = await c();
+    const dResult = await d();
+
+    console.log({ aResult, bResult, cResult, dResult });
+  };
+
+  const runPromiseWithAllSuccess = async () => {
+    try {
+      const results = await Promise.all([a(), b(), c(), d()]);
+      console.log(results);
+    } catch (err) {
+      console.log("Error");
+    }
+  };
+
+  runPromiseWithAllSuccess();
+</script> -->

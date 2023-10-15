@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const profile = {
+    name: "Amit",
+    city: "Delhi",
+    country: "India",
+    area:{
+        address:"Saket"
+    }
+  };
+
+  const details = {
+    name: "Aman",
+    city: "Mumbai",
+    area:{
+        address2:"Bandra"
+    }
+  };
+
+  const mergedObj = { ...details, ...profile };
+  const mergedObj2 = { ...profile, ...details };
+
+  const newObj = {
+    name: "Vikas",
+    pin: 007,
+    ...profile,
+    ...details,
+    pin: 900,
+    name: "Rahul",
+    area:"Navi Mumbai"
+  };
+  //console.log(mergedObj, mergedObj2);
+
+  console.log(newObj);
+</script>
+
+<script>
+    const _proto = {
+      getName: function () {
+        return this.name;
+      },
+    };
+    const o = Object.create(null); // null will remove all prototypes
+    const user = Object.create(_proto); // Custom prototype
+  
+    const j = {};
+    console.log(o, j, user);
+  </script>
+
+<script>
+    Object.prototype.isObj = "Reetika";
+    String.prototype.isObj = "Vishal Kumar";
+  
+    let name = "Ankit"; // This is associated with string
+  
+    console.log(name, name.isObj);
+  </script>
+  
+  <script>
+    Object.prototype.meraUpperCaseSplit = function (cond) {
+      const val = this.toUpperCase().split(cond);
+      return val;
+    };
+  
+    const uName = "BaLaJi";
+  
+    const normalSplit = uName.split("");
+    const customSplit = uName.meraUpperCaseSplit("");
+  
+    console.log({ normalSplit, customSplit });
+  </script>
+  
+
+Prototype
+Prototypal Inheritance
+Prototype Chaining

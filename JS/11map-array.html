@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const profiles = [
+    { id: 1, name: "ArUn", city: "pUnE" },
+    { id: 2, name: "aNkIt", city: "morEna" },
+    { id: 3, name: "miteSh", city: "mUmbai" },
+    { id: 4, name: "vikAs", city: "bIhar" },
+  ];
+
+  const result = profiles.map((profile) => {
+    profile.name = profile.name.toLowerCase();
+    profile.city = profile.city.toLowerCase();
+    return profile;
+  });
+
+  console.log(result);
+</script>
+
+<script>
+  const profilesV2 = [
+    { id: 1, name: "ArUn", city: "pUnE", isFollowing: true },
+    { id: 2, name: "aNkIt", city: "morEna", isFollowing: true },
+    { id: 3, name: "miteSh", city: "mUmbai", isFollowing: false },
+    { id: 4, name: "vikAs", city: "bIhar", isFollowing: false },
+  ];
+
+  const followers = [1, 2];
+
+  const instaLikes = profilesV2.map((item) => {
+    if (item.isFollowing) {
+      item.followMessage = "Following";
+    } else {
+      item.followMessage = "Follow";
+    }
+
+    return item;
+  });
+  console.log({ instaLikes });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const profiles = [
+    { id: 1, name: "ArUn", city: "pUnE" },
+    { id: 2, name: "aNkIt", city: "morEna" },
+    { id: 3, name: "miteSh", city: "mUmbai" },
+    { id: 4, name: "vikAs", city: "bIhar" },
+  ];
+
+  const result = profiles.map((profile) => {
+    profile.name = profile.name.toLowerCase();
+    profile.city = profile.city.toLowerCase();
+    return profile;
+  });
+
+  console.log(result);
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const names = ["aNkIt", "jaIn", "reeTika", "vishaL"]; // ankit, jain, reetika, vishal
+
+  //
+  const allLowerCases = names.map((name) => name.toLowerCase());
+
+  const allCapatalise = names.map((name) => {
+    const result = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+    return result;
+  });
+  console.log({ allLowerCases, allCapatalise });
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const arr = [1, 2, 3, 4, 5, 6];
+
+  // Multiply every element by 2 & form a new array
+  const newTraditionalArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newTraditionalArr.push(arr[i] * 2);
+  }
+
+  console.log({ arr, newTraditionalArr });
+</script>
+
+<script>
+  // New way 1
+  const callbackFun = (data) => {
+    return data * 2;
+  };
+  const mappedArrayV1 = arr.map(callbackFun);
+
+  // New way 2
+  const mappedArrayV2 = arr.map((data) => {
+    return data * 2;
+  });
+
+  // New way 3
+  const mappedArrayV3 = arr.map((data) => data * 2);
+
+  console.log({ mappedArrayV1, mappedArrayV2, mappedArrayV3 });
+</script> -->

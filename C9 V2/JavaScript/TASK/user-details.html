@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+    <ul id="detail"></ul>
+  </body>
+</html>
+<script>
+  let getCookie = (data) => {
+    let userCookie = document.cookie.split("; ");
+    for (let i of userCookie) {
+      const [cookieName, cookieValue] = i.split("=");
+      if (cookieName === data) {
+        return cookieValue;
+      }
+      return null;
+    }
+  };
+
+  let parseCookieValue = (cookieData) => {
+    let cookieValue = getCookie(cookieData);
+    if (cookieValue) {
+      return JSON.parse(cookieValue);
+    }
+  };
+  let result = parseCookieValue("userDetail");
+  console.log(result);
+
+  let ul = document.getElementById("detail");
+  for (let key in result) {
+    if (key !== "password") {
+      let li = document.createElement("li");
+      li.innerText = `${key} : ${result[key]}`;
+      ul.append(li);
+    }
+  }
+</script>

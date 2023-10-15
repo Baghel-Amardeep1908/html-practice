@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let arr = [1, 2, 3, 5, 2, 5, 7, 8, 7];
+  let obj = {};
+  for (let i of arr) {
+    if (!obj[i]) {
+      obj[i] = 1;
+    } else {
+      obj[i] += 1;
+    }
+  }
+  console.log(Object.keys(obj).map((item) => +item));
+</script>

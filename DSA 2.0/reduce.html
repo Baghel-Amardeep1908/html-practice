@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   const numbers = [12, 6, 8, 23, 14, 9, 10];
+
+  //   // Use reduce() to find the maximum value in the array
+  //   const max = numbers.reduce((acc, curr) => {
+  //     if (acc < curr) {
+  //       acc = curr;
+  //     }
+  //     return acc;
+  //   }, 0);
+
+  //   console.log(max); // Expected output: 23
+
+  ////////////////////////////////////////////////////////
+
+  //   const strings = ["Hello", " ", "world", "!"];
+
+  //   // Use reduce() to concatenate all the strings into one
+  //   const concatenatedString = strings.reduce((acc, curr) => acc + curr, "");
+
+  //   console.log(concatenatedString); // Expected output: "Hello world!"
+
+  //////////////////////////////////////////////////////////////////
+
+  //   const numbers = [2, 3, 4, 5];
+
+  //   // Use reduce() to calculate the product of all the numbers
+  //   const product = numbers.reduce((acc, curr) => acc * curr, 1);
+
+  //   console.log(product); // Expected output: 120 (2 * 3 * 4 * 5)
+
+  ///////////////////////////////////////////////////////////////////
+
+  //   const expenses = [
+  //     { id: 1, amount: 50 },
+  //     { id: 2, amount: 30 },
+  //     { id: 3, amount: 75 },
+  //     { id: 4, amount: 20 },
+  //   ];
+
+  //   // Use reduce() to calculate the total expense amount
+  //   const totalExpense = expenses.reduce((acc, curr) => acc + curr.amount, 0);
+
+  //   console.log(totalExpense); // Expected output: 175
+
+  ////////////////////////////////////////////////////////////
+
+  const products = [
+    { id: 1, name: "Laptop" },
+    { id: 2, name: "Phone" },
+    { id: 3, name: "Tablet" },
+    { id: 4, name: "Monitor" },
+  ];
+
+  // Use map() to create an array of product names
+  const productNames = products.reduce((acc, curr) => {
+    acc.push(curr.name);
+    console.log("fdsajfkl", acc);
+    return acc;
+  }, []);
+
+  console.log(productNames); // Expected output: ["Laptop", "Phone", "Tablet", "Monitor"]
+</script>

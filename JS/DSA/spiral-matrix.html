@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  var input = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+    [13, 14, 15, 16],
+  ];
+
+  // Output -> Hint - Sprial in clockwise order
+  // [1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10];
+  // [1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 5, 6, 7, 11, 15, 10, 9, 10, 14, 13]
+  // [1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5]
+  // [1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]
+  // [1, 2, 3, 4, 8, 12, 16, 15, 14, 5, 9, 13, 6, 7, 11, 10]
+
+  const results = [];
+  let loopCount = 0;
+
+  for (let i = 0; i < input.length; i++) {
+    const currentRow = input[i];
+    const fRowLen = currentRow.length - i;
+    const lastCol = input.length;
+    const bottomRow = input[input.length - 1 - i];
+    const firstCol = input.length;
+
+    for (let j = i; j < fRowLen; j++) {
+      results.push(currentRow[j]);
+      //console.log("37:", currentRow[j]);
+    }
+
+    for (let k = i + 1; k < lastCol - i; k++) {
+      console.log("41: ", { k, lastCol, i });
+      const lastColIndexVal = input[k][lastCol - 1 - i];
+      results.push(lastColIndexVal);
+      //console.log("43:", lastColIndexVal);
+    }
+
+    for (let l = bottomRow.length - 2 - i; l > i; l--) {
+      const lastRowIndexVal = bottomRow[l];
+      results.push(lastRowIndexVal);
+      //console.log("49:", lastRowIndexVal);
+    }
+
+    for (let m = firstCol - 1 - i; m > i; m--) {
+      const firstColIndexVal = input[m][i];
+      results.push(firstColIndexVal);
+      //console.log("55:", firstColIndexVal);
+    }
+  }
+
+  console.log(results);
+
+  // New
+
+  let resultsV2 = [];
+  for (let i = 0; i < input.length; i++) {
+    const currentRow = input[i];
+    const fRowLen = currentRow.length - i;
+    const lastCol = input.length;
+    const bottomRow = input[input.length - 1 - i];
+    const firstCol = input.length;
+
+    for (let j = i; j < fRowLen; j++) {
+      resultsV2.push(currentRow[j]);
+      //console.log("37:", currentRow[j]);
+    }
+
+    const firstColElems = [];
+    for (let k = i + 1; k < lastCol - i; k++) {
+      console.log("41: ", { k, lastCol, i });
+      const lastColIndexVal = input[k][lastCol - 1 - i];
+      const firstColIndexVal = input[k][i];
+      resultsV2.push(lastColIndexVal);
+      firstColElems.push(firstColIndexVal);
+      //console.log("43:", lastColIndexVal);
+    }
+
+    for (let l = bottomRow.length - 2 - i; l > i; l--) {
+      const lastRowIndexVal = bottomRow[l];
+      resultsV2.push(lastRowIndexVal);
+      //console.log("49:", lastRowIndexVal);
+    }
+
+    console.log("__", firstColElems);
+    resultsV2 = resultsV2.concat(firstColElems);
+  }
+
+  console.log({ resultsV2 });
+</script>
+
+<!-- start_row = 0
+    start_col = 0
+    end_row = n - 1
+    end_col = n - 1
+    pointer = 1
+    while start_row <= end_row and start_col <= end_col:
+        for i in range(start_col, end_col + 1):
+            res[start_row][i] = pointer
+            pointer += 1
+        start_row += 1
+        for j in range(start_row, end_row + 1):
+            res[j][end_col] = pointer
+            pointer += 1
+        end_col -= 1
+        if end_col >= start_col:
+            for k in range(end_col, start_col - 1, -->

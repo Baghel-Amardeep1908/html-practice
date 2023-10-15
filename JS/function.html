@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  let fun = (a,b)=>a+b;
+  console.log(fun(10,50))
+</script>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  console.log("Before", normalFunc, arrowFunc);
+
+  function normalFunc() {
+    console.log("I'm a normal function");
+  }
+
+  var f1 = function () {};
+
+  /* var arrowFunc = () => {
+    console.log("I'm an Arrow Function");
+  }; */
+
+  let arrowFunc = () => {
+    console.log("I'm an Arrow Function");
+  };
+
+  console.log("After", normalFunc, arrowFunc);
+</script> -->
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  
+
+  function tryMe() {
+    function tryMe2() {
+      console.log("Inner function");
+    }
+    
+    console.log("Hello Developer");
+    
+  }
+  
+</script> -->
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  function nAdd() {
+  let sum = 0;
+  for (let index = 0; index < arguments.length; index++) {
+    const currentVal = Number(arguments[index]);
+
+    if (isNaN(currentVal)) {
+      continue;
+    }
+
+    sum += currentVal;
+  }
+  return sum;
+}
+console.log(nAdd(100, 490, "ankit", 50, null, 490, "30", 50, "", false, NaN));
+
+
+</script> -->
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    function add() {
+        let a = 0;
+        for (i = 0; i < arguments.length; i++) {
+          if (typeof arguments[i] === "number" && !Number.isNaN(arguments[i])) {
+            a = a + arguments[i];
+          }
+        }
+        return console.log(a);
+      }
+      
+      add(100, 490, "ankit", 50, null, 490, "30", 50, "", false);
+</body>
+</html>
+<script>
+    // console.log(nAdd(100, 490, "ankit", 50, null, 490, "30", 50, "", false));
+
+    function myfun(){
+        if(arguments===)
+        let a=0;
+        for(i=0; i<=arguments.length; i++){
+            a = a + arguments[i];
+        }
+        return a;
+    }
+    console.log(myfun(100, 490, "ankit", 50, null, 490, "30", 50, "", false))
+</script> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function multi(){
+        let mul = 1;
+        for(i=0; i<arguments.length; i++){
+            mul = mul * arguments[i];
+        }
+        return mul;
+    }
+    console.log(multi(2, 2));
+</script> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  function add(a, b, c) {
+    console.log({ a, b, c });
+    const sum = a + b + c;
+    return sum;
+  }
+
+  function nAdd() {
+    let sum = 0;
+    for (let i = 0; i < arguments.length; i++) {
+      sum = sum + arguments[i];
+    }
+
+    return sum;
+  }
+
+  console.log(nAdd(10, 40));
+  console.log(nAdd(10, 40, 30));
+  console.log(nAdd(10, 40, 30, 50));
+  console.log(nAdd(100, 490, 30, 50));
+  console.log(nAdd(100));
+  console.log(nAdd());
+  console.log(nAdd(100, 490, 30, 50, 100, 490, 30, 50));
+</script> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  function add(a, b, c) {
+    console.log({ a, b, c });
+    const sum = a + b + c;
+    return sum;
+  }
+
+  console.log(add(10, 40));
+  console.log(add(10, 40, 30));
+  console.log(add(10, 40, 30, 50));
+  console.log(add(100, 490, 30, 50));
+  console.log(add(100));
+  console.log(add());
+</script> -->

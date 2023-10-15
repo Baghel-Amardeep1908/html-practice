@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  fetch("https://fakestoreapi.com/products")
+    .then((data) => data.json())
+    .then((data) => {
+      console.log("Data: ", data);
+    })
+    .catch((err) => console.log("Error: ", err));
+
+  // Async Await
+  const callAPI = async () => {
+    try {
+      const result = await fetch("https://fakestoreapi.com/products");
+      const parsedJSON = await result.json();
+      console.log("Parsed : ", parsedJSON);
+      const parsedJSON2 = await result.json();
+      console.log("Parsed2 : ", parsedJSON2);
+    } catch (err) {
+      console.log("Error: ", err);
+    }
+  };
+
+  callAPI();
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <p>Title</p>
+      <input type="text" id="todoTitle" />
+      <button id="addTodo">Add Todo</button>
+    </div>
+    <div>
+      <ul id="todos"></ul>
+    </div>
+  </body>
+</html>
+<script>
+  let todosElem = document.getElementById("todos");
+  let todoTitleElem = document.getElementById("todoTitle");
+  let btnAddTodo = document.getElementById("addTodo");
+
+  btnAddTodo.addEventListener("click", () => {
+    console.log("val", todoTitleElem.value);
+    const todoTitleTxt = todoTitleElem.value;
+    const liElem = document.createElement("li");
+    liElem.innerText = todoTitleTxt;
+    todosElem.appendChild(liElem);
+    todoTitleElem.value = "";
+  });
+</script>
